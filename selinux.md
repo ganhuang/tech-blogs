@@ -1,12 +1,13 @@
-= SElinux
-== SElinux modes
+# SElinux
+
+## SElinux modes
 - `Enforcing` SELinux both logs and protects
 - `Premissive` SElinux allows all interactions, 
    logs the interactions only, no reboot is required to go from
    enforcing to premissive or back again
 - `Disable` Completely disables SElinux, reboot is needed to make effect
 
-== CLI
+## CLI
 
 - SElinux modes
 
