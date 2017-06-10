@@ -7,7 +7,7 @@
    enforcing to premissive or back again
 - `Disable` Completely disables SElinux, reboot is needed to make effect
 
-## CLI
+## SElinux commands
 
 - SElinux modes
 
