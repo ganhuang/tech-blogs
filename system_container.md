@@ -19,15 +19,18 @@ First, you need download Atomic Centos from https://wiki.centos.org/zh/SpecialIn
 
 ```
 $ git clone https://github.com/projectatomic/atomic-system-containers && cd atomic-system-containers/docker-centos
+
 # Build image from source code using Docker
 $ docker build -t docker-centos .
+
 # Pull the container image via Atomic from local Docker
 $ atomic pull --storage ostree docker:docker-centos:latest
-# Install the container
+
 # Check if the contaner image is installer properly
 $ atomic images list
    REPOSITORY                                                                       TAG         IMAGE ID       CREATED            VIRTUAL SIZE   TYPE
    docker-centos                                                                    latest      708c4bc2534a   2017-06-13 08:30                  ostree  
+
 # Install the container
 $ atomic install --system --system-package=no --name=docker-centos docker-centos
 Extracting to /var/lib/containers/atomic/docker-centos.0
@@ -35,4 +38,9 @@ systemctl daemon-reload
 systemd-tmpfiles --create /etc/tmpfiles.d/docker-centos.conf
 systemctl enable docker-centos
 
+# Start the docker system contaienr
+systemctl status docker-centos
+
+# Login to the contanier
+$ runc exec -t docker-cento /bin/bash
 ```
