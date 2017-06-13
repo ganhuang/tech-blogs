@@ -42,5 +42,5 @@ systemctl enable docker-centos
 systemctl status docker-centos
 
 # Login to the contanier
-$ runc exec -t docker-cento /bin/bash
+$ runc exec -t docker-centos /bin/bash
 ```
