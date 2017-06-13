@@ -39,7 +39,7 @@ systemd-tmpfiles --create /etc/tmpfiles.d/docker-centos.conf
 systemctl enable docker-centos
 
 # Start the docker system contaienr
-systemctl status docker-centos
+$ systemctl status docker-centos
 
 # Login to the contanier
 $ runc exec -t docker-centos /bin/bash
