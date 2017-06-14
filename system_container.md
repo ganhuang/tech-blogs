@@ -1,5 +1,5 @@
 # [Reference](http://www.projectatomic.io/blog/2016/09/intro-to-system-containers/)
-`Container` (Thanks to `Docker` to make it usable and pupular) is a revolutionary technology that is changing the way we ship our products, making them being iterated faster as well.
+`Container` (Thanks to `Docker` to make it usable and pupular) is a revolutionary technology that is changing the way we ship our products, this makes it easy to move the contained application between environments (dev, test, production, etc.) while retaining full functionality.
 
 
 We can image that the future is a `Containers` world, all the apps will benifit a lot from containers. We can easily run a app in a container nowadays, but how can we run a system service in a container? `System container` comes.
@@ -18,7 +18,9 @@ First, you need download Atomic Centos from https://wiki.centos.org/zh/SpecialIn
 - Build a docker-centos system container image as you need
 
 ```
-$ git clone https://github.com/projectatomic/atomic-system-containers && cd atomic-system-containers/docker-centos
+# Download the files to build a system container image
+$ git clone https://github.com/projectatomic/atomic-system-containers
+$ cd atomic-system-containers/docker-centos
 
 # Build image from source code using Docker
 $ docker build -t docker-centos .
