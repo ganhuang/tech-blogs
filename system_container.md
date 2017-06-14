@@ -43,6 +43,50 @@ systemctl enable docker-centos
 # Start the docker system contaienr
 $ systemctl start docker-centos
 
-# Login to the contanier
+```
+
+- How to login to the contanier just like `docker exec`
+
+```
 $ runc exec -t docker-centos /bin/bash
 ```
+
+## What `Atomic` was doing actually while `pull` and `install`
+
+- atomic pull xxxxx
+
+```
+# As you can see the container images are stored and maintained in an ostree repo as a branch
+$ ll /ostree/repo/
+total 16
+-rw-r--r--.   1 root root   32 May  2 04:25 config
+drwxr-xr-x.   2 root root    6 May  2 04:25 extensions
+drwxr-xr-x. 258 root root 8192 May  3 03:46 objects
+drwxr-xr-x.   4 root root   34 May  2 04:25 refs
+drwxr-xr-x.   2 root root    6 May  2 04:25 state
+drwxr-xr-x.   3 root root   19 Jun 13 21:59 tmp
+
+```
+- atomic install xxx
+
+```
+# There `/var/lib/containers/atomic/docker-centos` directory generated for `docker-centos` ststem container
+$ ll /var/lib/containers/atomic
+total 0
+lrwxrwxrwx. 1 root root  42 Jun 13 08:49 docker-centos -> /var/lib/containers/atomic/docker-centos.0
+
+# Generate some configuration files for `runc` and `systemd`
+$ ll /var/lib/containers/atomic/docker-centos/
+total 24
+-rw-r--r--.  1 root root 9399 Jun 13 08:49 config.json
+-rw-r--r--.  1 root root  698 Jun 13 08:49 docker-centos.service
+-rw-r--r--.  1 root root 1553 Jun 13 08:49 info
+drwxr-xr-x. 15 root root  236 Jun 13 08:49 rootfs
+-rw-r--r--.  1 root root   31 Jun 13 08:49 tmpfiles-docker-centos.conf
+```
+
+  - [config.json](https://github.com/opencontainers/runtime-spec/blob/master/config.md) is for OCI runtime specs
+  - `docker-centos.service` is service unit configuration for systemd
+  - `rootfs` file system for LXC containers
+  - `info` some generated info automatically 
+  - `tmpfiles-docker-centos.conf` tmpfiles.template for system container
