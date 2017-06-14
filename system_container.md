@@ -2,7 +2,7 @@
 `Container` (Thanks to `Docker` to make it usable and pupular) is a revolutionary technology that is changing the way we ship our products, this makes it easy to move the contained application between environments (dev, test, production, etc.) while retaining full functionality.
 
 
-We can image that the future is a `Containers` world, all the apps will benifit a lot from containers. We can easily run a app in a container nowadays, but how can we run a system service in a container? `System container` comes.
+We can image that the future is a `Containers` world, all the apps will benifit a lot from containers. We can easily run a app in a container nowadays, but how can we run a system service in a container? Here `System container` comes.
 
 `System container` aim is to run services as containers, composed of several projects: 
 - [systemd](https://github.com/systemd/systemd) provides a system and service manager that runs as PID 1 and starts the rest of the system
@@ -41,7 +41,7 @@ systemd-tmpfiles --create /etc/tmpfiles.d/docker-centos.conf
 systemctl enable docker-centos
 
 # Start the docker system contaienr
-$ systemctl status docker-centos
+$ systemctl start docker-centos
 
 # Login to the contanier
 $ runc exec -t docker-centos /bin/bash
