@@ -16,5 +16,5 @@ buildah push docker.io/ghuang/hello-world:latest  docker://docker.io/ghuang/hell
 systemctl stop docker
 atomic pull --storage=ostree  docker.io/ghuang/hello-world
 atomic install --system-package=no docker.io/ghuang/hello-world
-http://10.8.241.7:8081/
+http://10.x.x.x:8081/
 ```
