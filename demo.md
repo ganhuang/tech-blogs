@@ -1,4 +1,4 @@
-## buildah
+## buildah & skopeo
 
 ```
 systemctl stop docker
@@ -8,12 +8,6 @@ buildah tag docker.io/library/hello-world:latest  ghuang/hello-world
 docker login docker.io
 kpod login docker.io
 buildah push docker.io/ghuang/hello-world:latest  docker://docker.io/ghuang/hello-world:latest
-```
-
-## skopeo
-
-```
-systemctl stop docker
 skopeo inspect docker://docker.io/ghuang/hello-world
 skopeo inspect docker://registry.access.redhat.com/openshift3/ose
 skopeo copy docker://docker.io/busybox docker://docker.io/ghuang/busybox
