@@ -13,6 +13,7 @@ buildah push docker.io/ghuang/hello-world:latest  docker://docker.io/ghuang/hell
 ## skopeo
 
 ```
+systemctl stop docker
 skopeo inspect docker://docker.io/ghuang/hello-world
 skopeo inspect docker://registry.access.redhat.com/openshift3/ose
 skopeo copy docker://docker.io/busybox docker://docker.io/ghuang/busybox
