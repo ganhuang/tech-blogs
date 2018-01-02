@@ -5,3 +5,4 @@
 - [IRC usage](irc.md)
 - [CRI-O](crio.md)
 - [Next generation container technologies](demo.md)
+- [How to install OpenShift Container Platform manually](install_origin.md)
