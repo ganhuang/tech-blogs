@@ -34,7 +34,7 @@
 
 ### 基础设施即代码 (IAC)
 
-基于 Packer、Ansible 和 Terraform 等开源工具构建出持续集成和持续部署的 Jenkins Pipeline：
+基于 Packer、Ansible 和 Terraform 等开源工具，构建不可变服务器部署模式的持续集成和持续部署 Jenkins Pipeline：
 
 ![打包部署流程](immutable.png)
 
