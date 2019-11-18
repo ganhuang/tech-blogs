@@ -37,7 +37,7 @@
 [Packer](https://www.packer.io/) 是一个优秀的，开源镜像打包工具。
 Packer 的 builder 支持主流的公有云、私有云平台以及常见的虚拟化类型。
 
-同时它支持的 provisoner 能覆盖主流的配置管理工具: Ansible, Puppet, Chef, Windows Shell, Linux Shell 等.
+同时它支持的 provisioner 能覆盖主流的配置管理工具: Ansible, Puppet, Chef, Windows Shell, Linux Shell 等.
 
 #### 配置管理及安全加密 Ansible
 
