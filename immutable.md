@@ -53,7 +53,7 @@ Packer 的 builder 支持主流的公有云、私有云平台以及常见的虚�
 
 下面将介绍两种较典型的应用类型所面临的问题：
 
-* 负载均衡器 + Web 应用
+* 负载均衡器 (LB) + 应用服务器 (Web Server)
 * 有状态的后端应用
 
 ***Note***: 主流的云厂商提供了类似动态虚拟机组的功能，来满足以上两种需求。本文主要介绍使用 Terraform 构建通用的解决方案。
@@ -64,7 +64,7 @@ Packer 的 builder 支持主流的公有云、私有云平台以及常见的虚�
 
 在资源池中，会存在蓝和绿两种虚拟机组。每次版本更新时，会选择**非**线上版本的一组虚拟机组做更新。
 
-当**非**线上的版本更新完毕之后，会获取新创建的 VM 的 IP 列表，将其动态更新至 LB 的后端。
+当**非**线上的版本更新完毕之后，会获取新创建的虚拟机 (VM) 的 IP 列表，将其动态更新至 LB 的后端。
 
 在对 LB 进行更新时，定义该资源的 [lifecycle](https://www.terraform.io/docs/configuration/resources.html#lifecycle-lifecycle-customizations) 为 `create_before_destroy = true`。 这样每次更新时会先把新的后端虚拟机 IP 添加至 LB，待所有新虚拟机组的后端 IP 加入完毕之后，terraform 再去移除老的虚拟机 IP 组.
 
