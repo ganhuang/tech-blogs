@@ -1,6 +1,6 @@
 # 使用 Packer、Ansible 和 Terraform 构建不可变的基础设施
 
-在容器编排领域，Kubernetes 已成为事实上的标准。容器技术极大的推动了企业内部 Devops 运动的进程。容器镜像（Docker Image）是容器技术栈中最关键的创新之一。
+在容器编排领域，Kubernetes 已成为事实上的标准。容器技术极大的推动了企业内部 Devops 运动的进程。而容器镜像（Docker Image）是容器技术栈中最关键的创新之一。
 
 容器镜像所具有的轻量性、便携性、分层机制、内核共享机制真正意义上实现了 “Build once, run anywhere"。这种不可变的基础设施（Immutable Infrastruture）高度保持了开发、测试和生产环境的一致性。因为镜像的易移植、易复制的特性，也给运维带来了很大的弹性和灵活性。
 
