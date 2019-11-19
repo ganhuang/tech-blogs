@@ -42,7 +42,7 @@
 
 为了使部署更加灵活，基础设施及配置代码独立于应用本身代码，单独存储。
 
-基于该代码仓库，创建自服务的 [Jenkins Multibranch](https://jenkins.io/doc/book/pipeline/multibranch/), 基于分支的代码变动自动触发 Build，并将软件包上传至中央制品仓库。
+基于该代码仓库，创建自服务的 [Jenkins Multibranch](https://jenkins.io/doc/book/pipeline/multibranch/), 基于分支的变动自动触发 Build，并将软件包上传至中央制品仓库。
 
 #### 虚拟机镜像打包 Packer
 
