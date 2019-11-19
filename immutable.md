@@ -188,4 +188,4 @@ resource "xx_cloud_vm_instance" "instances" {
 
 相对于 [AWS auto scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html)、[Google Autoscaling groups](https://cloud.google.com/compute/docs/autoscaler/) 和 [Azure VMSS](https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview) 等公有云平台提供的原生服务，以上解决方案还未能集成云平台中的监控系统做到资源的自动伸缩。但在多云的环境，或云平台提供的虚拟机组功能欠缺时，这种基于 Terraform 本身构造的通用解决方案仍有用武之地。在实际场景中用户可以灵活选择。
 
-相对于传统的应用部署方式，不可变服务器部署模式延长了从代码提交到收到部署反馈的时间，在初期也会给开发者带来一定的学习成本，在一定程度上牺牲了开发体验。但不可否认，它所带来的环境的一致性、运维的弹性，仍然是 Devops 运动中首推的解决方案。
+相对于传统的应用部署方式，不可变服务器部署模式延长了从代码提交到收到部署反馈的时间，在初期也会给开发者带来相应的学习成本，在一定程度上牺牲了开发体验。但不可否认，它所带来的环境的一致性、运维的弹性，仍然是 Devops 运动中首推的解决方案。
